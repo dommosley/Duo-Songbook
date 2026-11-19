@@ -63,7 +63,7 @@ main{flex:1;min-height:0;display:flex}
 .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .h-title{font-size:30px;font-weight:800;letter-spacing:-.02em;margin:0}
 .h-artist{color:var(--muted);font-size:16px;margin-top:4px}
-.tiles{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin:20px 0}
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:20px 0}
 .tile{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px;min-width:0}
 .tile .k{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .tile .v{font-size:20px;font-weight:700;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -86,7 +86,7 @@ main{flex:1;min-height:0;display:flex}
 .sub{font-size:13px;color:var(--muted)}
 .grid2{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:16px}
 .grid2 .wide{grid-column:span 2}
-.secedit{display:grid;grid-template-columns:150px 1fr 1fr auto;gap:8px;align-items:center;margin-bottom:8px}
+.secedit{display:grid;grid-template-columns:170px 1fr auto;gap:8px;align-items:center;margin-bottom:8px}
 .secedit input.ch{font-family:var(--mono);font-weight:700}
 .iconbtns{display:flex;gap:4px}
 .iconbtns button{padding:6px 10px;min-width:40px}
@@ -128,7 +128,7 @@ main{flex:1;min-height:0;display:flex}
 .g-next .warn{font-size:14px}
 .jump{position:absolute;inset:60px 15% 90px;background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:auto;z-index:30;box-shadow:0 20px 60px #000a}
 .mode-on{color:var(--accent)!important;border-color:var(--accent)!important}
-@media (max-width:900px){.tiles{grid-template-columns:repeat(3,1fr)}.list{width:280px}.g-body{grid-template-columns:1fr 240px}.grid2{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:900px){.tiles{grid-template-columns:repeat(2,1fr)}.list{width:280px}.g-body{grid-template-columns:1fr 240px}.grid2{grid-template-columns:repeat(2,1fr)}}
 
 .gate{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:24px}
 .gate .card{width:100%;max-width:420px;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px}
