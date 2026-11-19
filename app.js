@@ -32,8 +32,8 @@ ${+i.capo?`<span class="pill capo">C${+i.capo}</span>`:""}</div>`).join(""):`<di
     ${n.changed&&!e?`<button data-act="tr-save" data-id="${r.id}">Save as new key</button>`:""}
   </div>
   ${!e&&i.length?`<div class="alts" style="margin:-6px 0 16px"><span class="lbl">Or move the capo:</span>${i.map(s=>`<button class="chip ${s.capo===n.capo?"on":""}" data-act="tr-capo" data-id="${r.id}" data-c="${s.capo}">${s.capo?"Capo "+s.capo:"No capo"}</button>`).join("")}</div>`:""}`}function tE(r,e){return`  <div class="tile capo"><div class="k">Capo</div><div class="v">${vg(e.capo)}</div></div>
-  <div class="tile"><div class="k">RC-300</div><div class="v">${j(aa(r.memory)||"\u2013")}</div></div>
-  <div class="tile"><div class="k">SPD-SX kit</div><div class="v">${j(r.kit||"\u2013")}</div></div>
+  <div class="tile hl"><div class="k">RC-300</div><div class="v">${j(aa(r.memory)||"\u2013")}</div></div>
+  <div class="tile hl"><div class="k">SPD-SX kit</div><div class="v">${j(r.kit||"\u2013")}</div></div>
   <div class="tile"><div class="k">Bass</div><div class="v">${j(r.bass||"\u2013")}</div></div>
   <div class="tile"><div class="k">Loop</div><div class="v" style="font-size:15px;white-space:normal">${j(dh[r.loop]||"\u2013")}</div></div>`}function nE(){let r=$e(b.selSong);if(!r)return`<div class="empty"><h2>${b.songs.length?"Pick a song":"Your songbook is empty"}</h2>${b.songs.length?"Choose a song on the left, or add a new one.":"Add your gig-ready songs with <b>+ Song</b>. It's easiest on the laptop, and they'll show up on the iPad."}</div>`;let e=jt(r),t=b.sets.filter(n=>(n.songIds||[]).includes(r.id));return`<div class="row" style="justify-content:space-between;align-items:flex-start">
     <div><h1 class="h-title">${j(r.title)}</h1><div class="h-artist">${j(r.artist||"")}</div></div>
@@ -107,8 +107,8 @@ ${+i.capo?`<span class="pill capo">C${+i.capo}</span>`:""}</div>`).join(""):`<di
     <aside class="g-side">
       <div class="tile capo big"><div class="k">Capo</div><div class="v">${vg(i.capo)}</div></div>
       ${o.length?`<div class="alts"><span class="lbl" style="width:100%">Or move the capo:</span>${o.map(u=>`<button class="chip ${u.capo===i.capo?"on":""}" data-act="tr-capo" data-id="${t.id}" data-c="${u.capo}">${u.capo?"Capo "+u.capo:"No capo"}</button>`).join("")}</div>`:""}
-      <div class="tile big"><div class="k">RC-300</div><div class="v" style="font-size:30px">${j(aa(t.memory)||"\u2013")}</div></div>
-      <div class="tile big"><div class="k">SPD-SX kit</div><div class="v" style="font-size:30px">${j(t.kit||"\u2013")}</div></div>
+      <div class="tile big hl"><div class="k">RC-300</div><div class="v" style="font-size:30px">${j(aa(t.memory)||"\u2013")}</div></div>
+      <div class="tile big hl"><div class="k">SPD-SX kit</div><div class="v" style="font-size:30px">${j(t.kit||"\u2013")}</div></div>
       <div class="tile"><div class="k">Bass</div><div class="v">${j(t.bass||"\u2013")}</div></div>
       <div class="tile"><div class="k">Loop</div><div class="v" style="font-size:17px;white-space:normal">${j(dh[t.loop]||"\u2013")}</div></div>
       ${b.mode==="concert"?'<div class="warn" style="text-align:center">Showing concert pitch, not shapes</div>':""}
