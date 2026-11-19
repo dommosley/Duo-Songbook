@@ -1,6 +1,6 @@
 // Duo Songbook service worker: keeps the app itself on the device so it opens with no signal.
 // Songs are stored separately by Firebase on the device.
-const VERSION = 'duo-songbook-202611191155';
+const VERSION = 'duo-songbook-202611191201';
 const FILES = ['./', './index.html', './app.js', './config.js', './manifest.json', './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
@@ -19,15 +19,17 @@ self.addEventListener('fetch', e => {
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return; // Firebase traffic goes straight to the network
   const key = req.mode === 'navigate' ? './index.html' : req;
+  // With signal: get the newest version (giving up after 4 seconds). No signal: use the saved copy.
   e.respondWith(caches.open(VERSION).then(async cache => {
-    const hit = await cache.match(key, { ignoreSearch: true });
-    // Serve the saved copy instantly; refresh it in the background when online.
-    const refresh = fetch(req).then(res => {
+    const timeout = new Promise(r => setTimeout(() => r(null), 4000));
+    const net = fetch(req, { cache: 'no-cache' }).then(res => {
       if (res && res.ok) cache.put(key, res.clone());
       return res;
     }).catch(() => null);
-    if (hit) { e.waitUntil(refresh); return hit; }
-    const res = await refresh;
-    return res || new Response('Offline and this file is not saved yet.', { status: 503 });
+    const res = await Promise.race([net, timeout]);
+    if (res && res.ok) return res;
+    const hit = await cache.match(key, { ignoreSearch: true });
+    if (hit) { e.waitUntil(net); return hit; }
+    return (await net) || new Response('Offline and this file is not saved yet.', { status: 503 });
   }));
 });
