@@ -147,6 +147,12 @@ textarea.ch{min-height:44px;resize:none;line-height:1.5;overflow:hidden;font-fam
 .sec .c .cl{display:flex;flex-wrap:wrap;row-gap:4px}
 .sec .c .cl+.cl{margin-top:6px}
 .g-secs .sec .c .cl+.cl{margin-top:.15em}
+.setgrid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:22px;align-items:start}
+.libcol{position:sticky;top:0}
+.lib-list{max-height:calc(100vh - 220px);max-height:calc(100dvh - 220px);margin-top:8px}
+.lib-list .item{min-height:52px;padding:10px 14px}
+.lib-list .item.in{opacity:.55}
+.pill.add{color:var(--accent);border-color:#1f5b52}
 .mback{display:none}
 @media (max-width:760px){
   body{overflow:auto}
@@ -171,6 +177,9 @@ textarea.ch{min-height:44px;resize:none;line-height:1.5;overflow:hidden;font-fam
   .secedit{grid-template-columns:110px 1fr!important}
   .secedit .iconbtns{grid-column:1/-1;justify-content:flex-end}
   .secedit.bankrow{grid-template-columns:70px 1fr auto!important}
+  .setgrid{grid-template-columns:1fr}
+  .libcol{position:static}
+  .lib-list{max-height:55vh}
   .secedit.bankrow .iconbtns{grid-column:auto}
   .setrow{grid-template-columns:24px 1fr auto auto auto;gap:6px;padding:8px}
   .setrow button{min-width:40px;padding:6px}
