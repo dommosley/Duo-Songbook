@@ -89,7 +89,7 @@ main{flex:1;min-height:0;display:flex}
 .grid2 .wide{grid-column:span 2}
 .grid2.g5{grid-template-columns:repeat(5,minmax(0,1fr))}
 .grid2.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
-.secedit{display:grid;grid-template-columns:170px 1fr auto;gap:8px;align-items:center;margin-bottom:8px}
+.secedit{display:grid;grid-template-columns:170px 1fr auto;gap:8px;align-items:start;margin-bottom:8px}
 .secedit input.ch{font-family:var(--mono);font-weight:700}
 .iconbtns{display:flex;gap:4px}
 .iconbtns button{padding:6px 10px;min-width:40px}
@@ -142,6 +142,11 @@ main{flex:1;min-height:0;display:flex}
 #login-msg{min-height:20px;color:var(--warn);font-size:14px}
 
 
+textarea.ch{min-height:44px;resize:none;line-height:1.5;overflow:hidden;font-family:var(--mono);font-weight:700}
+.sec .c{display:block}
+.sec .c .cl{display:flex;flex-wrap:wrap;row-gap:4px}
+.sec .c .cl+.cl{margin-top:6px}
+.g-secs .sec .c .cl+.cl{margin-top:.15em}
 .mback{display:none}
 @media (max-width:760px){
   body{overflow:auto}
