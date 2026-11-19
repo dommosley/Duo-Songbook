@@ -141,6 +141,46 @@ main{flex:1;min-height:0;display:flex}
 .gate form>*{margin-bottom:12px}.gate button{width:100%}
 #login-msg{min-height:20px;color:var(--warn);font-size:14px}
 
+
+.mback{display:none}
+@media (max-width:760px){
+  body{overflow:auto}
+  #app{height:auto;min-height:100vh}
+  .top{flex-wrap:wrap;gap:8px;padding:8px 12px;position:sticky;top:0;z-index:5}
+  .brand{font-size:16px}
+  .sync{font-size:12px}
+  nav{order:3;width:100%}
+  nav button{flex:1;padding:8px 6px}
+  main{display:block}
+  .list{width:100%;border-right:0}
+  .list-body{overflow:visible}
+  .pane{display:none;padding:14px 14px 60px;overflow:visible}
+  body.show-pane .list{display:none!important}
+  body.show-pane .pane{display:block}
+  .mback{display:inline-flex;align-items:center;margin:0 0 10px -6px;padding:6px 8px;border:0;color:var(--accent);font-weight:600}
+  .h-title{font-size:24px}
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px;margin:14px 0}
+  .sections{grid-template-columns:1fr}
+  .grid2,.grid2.g3{grid-template-columns:1fr 1fr!important;gap:10px}
+  .grid2 .wide{grid-column:1/-1}
+  .secedit{grid-template-columns:110px 1fr!important}
+  .secedit .iconbtns{grid-column:1/-1;justify-content:flex-end}
+  .secedit.bankrow{grid-template-columns:70px 1fr auto!important}
+  .secedit.bankrow .iconbtns{grid-column:auto}
+  .setrow{grid-template-columns:24px 1fr auto auto auto;gap:6px;padding:8px}
+  .setrow button{min-width:40px;padding:6px}
+  .change{margin-left:30px}
+  .toolbar button{flex:1}
+  .g-body{grid-template-columns:1fr;overflow:auto}
+  .g-main{overflow:visible}
+  .g-side{border-left:0;border-top:1px solid #1d2028;flex-direction:row;flex-wrap:wrap}
+  .g-side .tile{flex:1 1 40%}
+  .g-title{font-size:26px!important}
+  .g-bottom{grid-template-columns:80px 1fr 80px}
+  .g-bottom button{min-height:52px;font-size:15px}
+  .g-top{flex-wrap:wrap}
+  .jump{inset:60px 8px 80px}
+}
 </style>
 </head>
 <body>
