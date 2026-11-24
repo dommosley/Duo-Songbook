@@ -41,7 +41,9 @@ label{display:block;font-size:12px;font-weight:600;letter-spacing:.06em;text-tra
 nav{display:flex;gap:6px}
 nav button{background:transparent;border-color:transparent;color:var(--muted);font-weight:600}
 nav button.on{background:var(--panel2);border-color:var(--line);color:var(--text)}
-.sync{margin-left:auto;font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px}
+.sync{margin-left:auto;font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px;cursor:pointer;padding:6px 10px;border:1px solid transparent;border-radius:999px}
+.sync:hover{border-color:var(--line)}
+.sync::after{content:'↻';font-size:15px;opacity:.7}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--muted)}
 .dot.ok{background:#4ade80}.dot.warn{background:var(--warn)}.dot.off{background:var(--danger)}
 main{flex:1;min-height:0;display:flex}
