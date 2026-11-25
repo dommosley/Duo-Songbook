@@ -1,6 +1,6 @@
 // Duo Songbook service worker: keeps the app itself on the device so it opens with no signal.
 // Songs are stored separately by Firebase on the device.
-const VERSION = 'duo-songbook-202611241607';
+const VERSION = 'duo-songbook-202611250955';
 const FILES = ['./', './index.html', './app.js', './config.js', './manifest.json', './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
